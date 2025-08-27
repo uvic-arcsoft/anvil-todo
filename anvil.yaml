@@ -1,0 +1,48 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: true}
+- client_config: {allow_signup: false, confirm_email: false, enable_automatically: true, use_email: true}
+  server_config: {user_table: users}
+  source: /runtime/services/anvil/users.yml
+package_name: MyCRUDApp
+allow_embedding: false
+name: My CRUD App
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: Form1
+db_schema:
+- name: tasks
+  id: 12345
+  python_name: tasks
+  columns:
+    E9e2ASS2uyU=:
+      name: name
+      type: string
+      admin_ui: {order: 0, width: 200}
+    Lk958fQHwJ0=:
+      name: complete
+      type: bool
+      admin_ui: {order: 0, width: 200}
+  access: {python_name: tasks, app_id: MyCRUDApp, server: full, client: none,
+    table_id: 12345}
+- name: users
+  id: 1002225
+  python_name: users
+  columns:
+    2fyaQDZ33Cg=:
+      admin_ui: {order: 2, width: 200}
+      name: created_at
+      type: string
+    4tVMn0r8Q3A=:
+      admin_ui: {order: 1, width: 200}
+      name: name
+      type: string
+    ax0BZuoepqw=:
+      admin_ui: {order: 0, width: 200}
+      name: email
+      type: string
+  access: {python_name: users, app_id: MyCRUDApp, server: full, client: none,
+    table_id: 1002225}
+renamed: true
