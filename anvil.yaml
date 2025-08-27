@@ -30,7 +30,11 @@ metadata: {}
 name: My CRUD App
 package_name: MyCRUDApp
 renamed: true
-runtime_options: {client_version: '3', server_spec: null, server_version: python3-sandbox, version: 2}
+runtime_options:
+  client_version: '3'
+  server_spec: {base: python310-minimal}
+  server_version: python3-sandbox
+  version: 2
 services:
 - client_config: {}
   server_config: {auto_create_missing_columns: true}
