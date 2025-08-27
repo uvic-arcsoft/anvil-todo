@@ -1,3 +1,6 @@
+import anvil.tables as tables
+import anvil.tables.query as q
+from anvil.tables import app_tables
 import anvil.server
 import anvil.users
 from anvil.tables import app_tables
@@ -19,8 +22,6 @@ def login_user():
     email = None
     if headers:
         email = headers.get('X-Forwarded-User') or headers.get('x-forwarded-user')
-
-    print(f"email: {email}")
 
     if not email or '@' not in email:
         raise HttpError(400, "Missing or invalid X-Forwarded-User header")

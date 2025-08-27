@@ -1,5 +1,30 @@
 allow_embedding: false
-db_schema: {}
+db_schema:
+  tasks:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: name
+      type: string
+    - admin_ui: {width: 200}
+      name: complete
+      type: bool
+    server: full
+    title: tasks
+  users:
+    client: none
+    columns:
+    - admin_ui: {order: 0, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 1, width: 200}
+      name: email
+      type: string
+    - admin_ui: {order: 2, width: 200}
+      name: created_at
+      type: string
+    server: full
+    title: users
 dependencies: []
 metadata: {}
 name: My CRUD App
